@@ -38,7 +38,6 @@ dependencies:
   path_provider: ^2.1.2
   path: ^1.8.3
   provider: ^6.1.1
-  image_cropper: ^5.0.1
   googleapis: ^12.0.0
   googleapis_auth: ^1.4.1
   http: ^1.1.0

@@ -1,29 +1,24 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'dart:io';
 import '../models/zhuyin_mapping.dart';
 import 'vision_service.dart';
 
 class ZhuyinService extends ChangeNotifier {
   final ImagePicker _imagePicker = ImagePicker();
   final VisionService _visionService;
-  bool _isWindowsPlatform = false;
   
   String _originalText = '';
   String _zhuyinText = '';
-  File? _selectedImage;
+  XFile? _selectedImage;
   bool _isProcessing = false;
   String? _errorMessage;
 
-  ZhuyinService(this._visionService) {
-    _isWindowsPlatform = Platform.isWindows;
-  }
+  ZhuyinService(this._visionService);
 
   String get originalText => _originalText;
   String get zhuyinText => _zhuyinText;
-  File? get selectedImage => _selectedImage;
+  XFile? get selectedImage => _selectedImage;
   bool get isProcessing => _isProcessing;
   String? get errorMessage => _errorMessage;
 
@@ -43,19 +38,7 @@ class ZhuyinService extends ChangeNotifier {
       }
 
       debugPrint('Image picked: ${image.path}');
-      
-      // For Windows, skip cropping
-      if (!_isWindowsPlatform) {
-        File? cropped = await _cropImage(File(image.path));
-        if (cropped != null) {
-          _selectedImage = cropped;
-        } else {
-          debugPrint('Image cropping cancelled');
-          return;
-        }
-      } else {
-        _selectedImage = File(image.path);
-      }
+      _selectedImage = image;
       
       notifyListeners();
       await processImage();
@@ -82,19 +65,7 @@ class ZhuyinService extends ChangeNotifier {
       }
 
       debugPrint('Photo taken: ${image.path}');
-      
-      // For Windows, skip cropping
-      if (!_isWindowsPlatform) {
-        File? cropped = await _cropImage(File(image.path));
-        if (cropped != null) {
-          _selectedImage = cropped;
-        } else {
-          debugPrint('Image cropping cancelled');
-          return;
-        }
-      } else {
-        _selectedImage = File(image.path);
-      }
+      _selectedImage = image;
       
       notifyListeners();
       await processImage();
@@ -102,39 +73,6 @@ class ZhuyinService extends ChangeNotifier {
       debugPrint('Error taking photo: $e');
       _errorMessage = 'Error taking photo: $e';
       notifyListeners();
-    }
-  }
-
-  Future<File?> _cropImage(File imageFile) async {
-    try {
-      if (_isWindowsPlatform) {
-        return imageFile; // Skip cropping on Windows
-      }
-      
-      final croppedFile = await ImageCropper().cropImage(
-        sourcePath: imageFile.path,
-        compressQuality: 85,
-        aspectRatioPresets: [
-          CropAspectRatioPreset.original,
-          CropAspectRatioPreset.square,
-          CropAspectRatioPreset.ratio3x2,
-          CropAspectRatioPreset.ratio4x3,
-        ],
-      );
-      
-      if (croppedFile != null) {
-        debugPrint('Image cropped successfully: ${croppedFile.path}');
-        return File(croppedFile.path!);
-      }
-      return null;
-    } catch (e) {
-      debugPrint('Error cropping image: $e');
-      if (_isWindowsPlatform) {
-        return imageFile; // Return original file on Windows if cropping fails
-      }
-      _errorMessage = 'Error cropping image: $e';
-      notifyListeners();
-      return null;
     }
   }
 
@@ -146,7 +84,8 @@ class ZhuyinService extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final String recognizedText = await _visionService.detectText(_selectedImage!);
+      final imageBytes = await _selectedImage!.readAsBytes();
+      final String recognizedText = await _visionService.detectText(imageBytes);
       _originalText = recognizedText;
       _zhuyinText = await convertToZhuyin(_originalText);
       
