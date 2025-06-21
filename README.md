@@ -15,3 +15,8 @@ Resources
 - dict_revised_2015_20250327	文字資料庫
 - utilize github : https://github.com/g0v/moedict-data
 - 記得加教育部版權 (Maybe I can fork the github up )
+
+2025.06.21
+Image to zhuyin done!
+Next Step : Change UI. delete the 照相. Instead add typing (text) to zhuyin.
+Check 版權問題, API Key Security
