@@ -45,11 +45,11 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 
 ## 🗃️ Resources & Licensing
 
-### 📚 Zhuyin Dictionary Source
+#### Zhuyin Dictionary Source
 - [教育部重編國語辭典（修訂本）文字資料庫](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_reviseddict_download.html)
 - GitHub mirror: [g0v/moedict-data](https://github.com/g0v/moedict-data)
 
-### ⚠️ License Notice
+#### License Notice
 - Dictionary data is from the **MOE Revised Mandarin Chinese Dictionary**, copyright belongs to the **Ministry of Education (Taiwan)**.
 - Licensed under **Creative Commons Attribution-NoDerivatives 3.0 Taiwan (CC BY-ND 3.0 TW)** — format conversion and application are allowed.
 - Data conversion script by @kcwu is released under **CC0**.
