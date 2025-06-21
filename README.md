@@ -4,7 +4,14 @@
 
 A Flutter desktop app that lets you **upload an image of Traditional Chinese text** and **convert it into Zhuyin (注音)** — making reading and pronunciation easier for learners and heritage speakers.
 
+
+
+https://github.com/user-attachments/assets/a0cacc9b-8bbc-455e-a181-f2f82f793bb2
+
+
+
 ---
+
 
 ## 🧠 Project Purpose
 
@@ -17,7 +24,9 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 
 > Most Chinese dictionaries do not support **image-based input**, which this app enables.
 
+
 ---
+
 
 ## ✅ Features
 
@@ -29,7 +38,9 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 - [ ] Crop or select text regions in image (planned)
 
 
+
 ---
+
 
 ## 🗓️ Development Log
 
@@ -46,7 +57,9 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
   - Add text input mode
   - Clean up API keys and ensure proper attribution
 
+
 ---
+
 
 ## 🗃️ Resources & Licensing
 
@@ -61,7 +74,9 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 
 > Full license: [MOE 公眾授權說明](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/index.html)
 
+
 ---
+
 
 ## 🧠 What I Learned
 
@@ -70,7 +85,9 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 - Using Cursor (Vibe Coding) for development  
 - Understanding licensing of public linguistic datasets
 
+
 ---
+
 
 ## 💡 Future Improvements
 
