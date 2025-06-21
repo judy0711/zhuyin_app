@@ -99,4 +99,4 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
   assets:
-    - "lib/zhuyin_transform/dict_revised_2015_20250327.xlsx"
+    - "lib/zhuyin_transform/zhuyin_dict.json"

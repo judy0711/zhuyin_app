@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class VisionService {
   // TODO: Replace with your actual Google Cloud API Key
-  final String _apiKey = 'AIzaSyDqJWrP6kG0Xss5Z5cvLcdN9MDrGV4GAms';
+  final String _apiKey = 'AIzaSyAQrvzF0dwF-mMX7BHrtSouU36rDYlA-Y8';
 
   Future<String> detectText(Uint8List imageBytes) async {
     final url = Uri.parse(

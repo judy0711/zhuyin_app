@@ -102,20 +102,38 @@ class ZhuyinService extends ChangeNotifier {
   }
 
   Future<String> convertToZhuyin(String text) async {
+    final cleanText = text.trim();
+    debugPrint("Converting text: '$cleanText'");
     final List<String> result = [];
-    
-    for (int i = 0; i < text.length; i++) {
-      final String char = text[i];
-      final String? zhuyin = ZhuyinMapping.getZhuyin(char);
-      
-      if (zhuyin != null) {
-        result.add('$char($zhuyin)');
-      } else {
-        result.add(char);
+
+    // First, try to match the whole cleaned text as a single word
+    debugPrint("Attempting to find word in dictionary: '$cleanText'");
+    final wordZhuyin = ZhuyinMapping.getZhuyin(cleanText);
+    if (wordZhuyin != null) {
+      debugPrint("Found word '$cleanText' with zhuyin '$wordZhuyin'");
+      result.add('$cleanText($wordZhuyin)');
+    } else {
+      debugPrint("Word '$cleanText' not found. Checking character by character.");
+      // If no exact match, process character by character
+      for (int i = 0; i < cleanText.length; i++) {
+        final String char = cleanText[i];
+        if (char.trim().isEmpty) continue;
+
+        debugPrint("Attempting to find character in dictionary: '$char'");
+        final String? zhuyin = ZhuyinMapping.getZhuyin(char);
+
+        if (zhuyin != null) {
+          debugPrint("Found character '$char' with zhuyin '$zhuyin'");
+          result.add('$char($zhuyin)');
+        } else {
+          debugPrint("Character '$char' not found.");
+          result.add('$char(?)'); // Mark unmatched characters
+        }
       }
     }
-    
-    return result.join(' ');
+    final finalResult = result.join(' ');
+    debugPrint("Conversion result: '$finalResult'");
+    return finalResult;
   }
 
   @override
