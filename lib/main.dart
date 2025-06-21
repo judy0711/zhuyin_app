@@ -3,8 +3,12 @@ import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
 import 'services/zhuyin_service.dart';
 import 'services/vision_service.dart';
+import 'models/zhuyin_mapping.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ZhuyinMapping.loadDictionary();
+
   runApp(
     MultiProvider(
       providers: [

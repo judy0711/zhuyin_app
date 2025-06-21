@@ -43,6 +43,7 @@ dependencies:
   http: ^1.1.0
   google_sign_in: ^6.2.1
   url_launcher: ^6.2.4
+  excel: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -96,3 +97,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+  assets:
+    - "lib/zhuyin_transform/dict_revised_2015_20250327.xlsx"
