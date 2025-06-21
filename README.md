@@ -31,7 +31,7 @@ As a Taiwanese who grew up abroad, I often forget how to pronounce certain Chine
 ## ✅ Features
 
 - [x] Upload and display images from your device
-- [x] Recognize Traditional Chinese text via Google Cloud Vision API
+- [x] Recognize Traditional Chinese text via Google Cloud Vision API (Recognizes handwriting as well)
 - [x] Convert recognized text to Zhuyin using MOE resources
 - [x] Support text input for Zhuyin conversion 
 - [ ] Camera feature (planned)
