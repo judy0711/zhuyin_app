@@ -25,7 +25,7 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 > Most Chinese dictionaries do not support **image-based input**, which this app enables.
 
 
----
+
 
 
 ## ✅ Features
@@ -40,7 +40,7 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 
 
 
----
+
 
 
 ## 🗃️ Resources & Licensing
@@ -57,7 +57,7 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 > Full license: [MOE 公眾授權說明](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/index.html)
 
 
----
+
 
 
 ## 🧠 What I Learned
@@ -68,7 +68,7 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 - Understanding and Research licensing of public linguistic datasets
 
 
----
+
 
 
 ## 💡 Future Improvements
