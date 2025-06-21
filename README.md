@@ -18,5 +18,7 @@ Resources
 
 2025.06.21
 Image to zhuyin done!
+![image](https://github.com/user-attachments/assets/c515fef1-0b60-4690-86cb-43a51ba4e907)
+
 Next Step : Change UI. delete the 照相. Instead add typing (text) to zhuyin.
 Check 版權問題, API Key Security
