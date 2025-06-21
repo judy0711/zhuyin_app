@@ -17,10 +17,10 @@ https://github.com/user-attachments/assets/a0cacc9b-8bbc-455e-a181-f2f82f793bb2
 
 As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chinese characters while reading. Since most input methods are phonetic-based (Zhuyin), looking up unknown characters becomes difficult. This app solves that by allowing you to:
 
-- 🖼 Upload an image containing Traditional Chinese text  
-- 🔍 Recognize the text using **Google Cloud Vision API**  
-- 🧾 Convert recognized characters into **Zhuyin (注音)**  
-- ⌨️ Type/paste text directly for conversion 
+- Upload an image containing Traditional Chinese text  
+- Recognize the text using **Google Cloud Vision API**  
+- Convert recognized characters into **Zhuyin (注音)**  
+- Type/paste text directly for conversion 
 
 > Most Chinese dictionaries do not support **image-based input**, which this app enables.
 
