@@ -42,25 +42,6 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 ---
 
 
-## 🗓️ Development Log
-
-### 2025.06.13
-- ✅ Enabled image upload from device
-- ✅ Integrated Google Cloud Vision API
-- ⚠️ Encountered issues with character-to-Zhuyin mapping — needed better dataset
-
-### 2025.06.21
-- ✅ Image-to-Zhuyin transformation complete
-- ✅ Verified accuracy using MOE public data
-- 🧹 Next Up:
-  - Replace temporary dictionary with official licensed dataset
-  - Add text input mode
-  - Clean up API keys and ensure proper attribution
-
-
----
-
-
 ## 🗃️ Resources & Licensing
 
 ### 📚 Zhuyin Dictionary Source
@@ -83,7 +64,7 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 - Building desktop UI with Flutter  
 - Integrating Google Cloud Vision OCR  
 - Using Cursor (Vibe Coding) for development  
-- Understanding licensing of public linguistic datasets
+- Understanding and Research licensing of public linguistic datasets
 
 
 ---
@@ -97,10 +78,5 @@ As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chine
 - Polish the UI with a cuter, more user-friendly design
 - Improve Chinese text parsing and tone disambiguation
 
----
 
-## 🔒 Security & Clean-Up Checklist
 
-- [ ] Remove API keys from version control  
-- [ ] Avoid redistributing dictionary file directly — load from safe source  
-- [ ] Add proper license attribution in About section
