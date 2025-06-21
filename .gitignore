@@ -46,6 +46,3 @@ app.*.map.json
 
 # API Keys and Sensitive Data
 lib/config.dart
-lib/services/auth_service.dart
-lib/services/vision_service.dart
-lib\zhuyin_transform\zhuyin_dict.json
