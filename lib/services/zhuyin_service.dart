@@ -136,6 +136,29 @@ class ZhuyinService extends ChangeNotifier {
     return finalResult;
   }
 
+  Future<void> processText(String text) async {
+    if (text.isEmpty) return;
+    
+    _isProcessing = true;
+    _errorMessage = null;
+    _selectedImage = null; // Clear any previous image
+    notifyListeners();
+
+    try {
+      _originalText = text;
+      _zhuyinText = await convertToZhuyin(_originalText);
+      debugPrint('Processed text: $_originalText');
+    } catch (e) {
+      debugPrint('Error processing text: $e');
+      _originalText = 'Error processing text';
+      _zhuyinText = '';
+      _errorMessage = e.toString();
+    } finally {
+      _isProcessing = false;
+      notifyListeners();
+    }
+  }
+
   @override
   void dispose() {
     super.dispose();
