@@ -1,57 +1,89 @@
-# zhuyin_app
 
 
-2025.06.13
-- Succesfully upload images
-- Successfully connect it to using Google Cloud Vision API to recognize chinese image 
+# 📷 Zhuyin App (圖片轉注音 App)
 
--> Have error in converting it to zhuyin (need to check whether taiwan has big data from word to zhuyin)
--> edit the ui interface 
+A Flutter desktop app that lets you **upload an image of Traditional Chinese text** and **convert it into Zhuyin (注音)** — making reading and pronunciation easier for learners and heritage speakers.
+
+---
+
+## 🧠 Project Purpose
+
+As a Taiwanese who grew up abroad, I often forgot how to pronounce certain Chinese characters while reading. Since most input methods are phonetic-based (Zhuyin), looking up unknown characters becomes difficult. This app solves that by allowing you to:
+
+- 🖼 Upload an image containing Traditional Chinese text  
+- 🔍 Recognize the text using **Google Cloud Vision API**  
+- 🧾 Convert recognized characters into **Zhuyin (注音)**  
+- ⌨️ Type/paste text directly for conversion 
+
+> Most Chinese dictionaries do not support **image-based input**, which this app enables.
+
+---
+
+## ✅ Features
+
+- [x] Upload and display images from your device
+- [x] Recognize Traditional Chinese text via OCR (Google Cloud Vision API)
+- [x] Convert recognized text to Zhuyin using MOE resources
+- [x] Support typing or pasting text for Zhuyin conversion (in progress)
+- [ ] Cutified UI redesign (planned)
+- [ ] Crop or select text regions in image (planned)
 
 
-中文轉拼音 (注音)
-Resources
-- https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_reviseddict_download.html
-- dict_revised_2015_20250327	文字資料庫
-- utilize github : https://github.com/g0v/moedict-data
-- 記得加教育部版權 (Maybe I can fork the github up )
+---
 
-2025.06.21
-Image to zhuyin done!
-![image](https://github.com/user-attachments/assets/c515fef1-0b60-4690-86cb-43a51ba4e907)
+## 🗓️ Development Log
 
-Next Step : Change UI. delete the 照相. Instead add typing (text) to zhuyin.
-Check 版權問題, API Key Security
+### 2025.06.13
+- ✅ Enabled image upload from device
+- ✅ Integrated Google Cloud Vision API
+- ⚠️ Encountered issues with character-to-Zhuyin mapping — needed better dataset
 
-Get rid of the dictionary Iｕｓｅｄ，　ｇｅｔ　ｒｉｄ　ｏｆ　ａｐｉ　ｋｅｙ, give right to owner, 
+### 2025.06.21
+- ✅ Image-to-Zhuyin transformation complete
+- ✅ Verified accuracy using MOE public data
+- 🧹 Next Up:
+  - Replace temporary dictionary with official licensed dataset
+  - Add text input mode
+  - Clean up API keys and ensure proper attribution
 
+---
 
-Zhuyin_transform/zhuyin_dict.json 使用著「重編國語辭典（修訂本）」的公眾授權內容。辭典本文的著作權仍為教育部所有。（不公開）
+## 🗃️ Resources & Licensing
 
-公眾授權網：https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/index.html
+### 📚 Zhuyin Dictionary Source
+- [教育部重編國語辭典（修訂本）文字資料庫](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_reviseddict_download.html)
+- GitHub mirror: [g0v/moedict-data](https://github.com/g0v/moedict-data)
 
-依教育部之解釋，「創用CC-姓名標示- 禁止改作 臺灣3.0版授權條款」之改作限制標的為文字資料本身，不限制格式轉換及後續應用。
+### ⚠️ License Notice
+- Dictionary data is from the **MOE Revised Mandarin Chinese Dictionary**, copyright belongs to the **Ministry of Education (Taiwan)**.
+- Licensed under **Creative Commons Attribution-NoDerivatives 3.0 Taiwan (CC BY-ND 3.0 TW)** — format conversion and application are allowed.
+- Data conversion script by @kcwu is released under **CC0**.
 
-=====================================================
-企劃執行：國家教育研究院
+> Full license: [MOE 公眾授權說明](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/index.html)
 
-原 著 者：教育部國語推行委員會
-　　　   （民國102年1月1日配合行政院組改併入相關單位）
+---
 
-發 行 人：潘文忠　林崇熙
+## 🧠 What I Learned
 
-發 行 所：中華民國教育部
+- Building desktop UI with Flutter  
+- Integrating Google Cloud Vision OCR  
+- Using Cursor (Vibe Coding) for development  
+- Understanding licensing of public linguistic datasets
 
-維護單位：國家教育研究院語文教育及編譯研究中心
+---
 
-地　　址：臺北市大安區和平東路一段179號
+## 💡 Future Improvements
 
-電　　話：(02)7740-7282
+- Integrate Chinese Specified LLMs for more accurate or contextual pronunciation
+- Add cropping/selecting part of the uploaded image
+- Build mobile version in the future
+- Polish the UI with a cuter, more user-friendly design
+- Improve Chinese text parsing and tone disambiguation
 
-傳　　真：(02)7740-7284
+---
 
-電子郵件：onile@mail.naer.edu.tw
+## 🔒 Security & Clean-Up Checklist
 
-版　　次：中華民國110年11月臺灣學術網路第六版
-=====================================================
-此處轉換格式、重新編排的編輯著作權（如果有的話）由 @kcwu 以 CC0 釋出。
+- [ ] Remove API keys from version control  
+- [ ] Avoid redistributing dictionary file directly — load from safe source  
+- [ ] Add proper license attribution in About section
