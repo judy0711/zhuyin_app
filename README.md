@@ -64,7 +64,6 @@ As a Taiwanese who grew up abroad, I often forget how to pronounce certain Chine
 
 - Building desktop UI with Flutter  
 - Integrating Google Cloud Vision OCR  
-- Using Cursor (Vibe Coding) for development  
 - Understanding and Research licensing of public linguistic datasets
 
 
